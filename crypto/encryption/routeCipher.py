@@ -110,7 +110,7 @@ def route_cipher_decrypt(ciphertext, cols, clockwise=True):
     for (r, c), char in zip(order, text):
         grid[r][c] = char
     
-    # baca per baris
+    # baca per baris grid
     plaintext = ''
     for r in range(rows):
         for c in range(cols):
