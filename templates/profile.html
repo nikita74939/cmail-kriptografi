@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Profile - C-Mail{% endblock %}
+{% block content %}
+<h3>⚙️ Edit Profile</h3>
+<form method="post" action="/profile" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label>Username</label>
+    <input type="text" class="form-control" name="username" value="{{ username }}" required>
+  </div>
+  <div class="mb-3">
+    <label>Change Password</label>
+    <input type="password" class="form-control" name="password" placeholder="New password">
+  </div>
+  <div class="mb-3">
+    <label>Profile Picture</label>
+    <input type="file" class="form-control" name="photo">
+  </div>
+  <button type="submit" class="btn btn-primary">Update Profile</button>
+</form>
+{% endblock %}

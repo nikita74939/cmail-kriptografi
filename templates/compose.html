@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Compose - C-Mail{% endblock %}
+{% block content %}
+<h3>✉️ Create New Message</h3>
+<form method="post" action="/compose">
+  <div class="mb-3">
+    <label>To</label>
+    <input type="text" class="form-control" name="to" required>
+  </div>
+  <div class="mb-3">
+    <label>Subject</label>
+    <input type="text" class="form-control" name="subject" required>
+  </div>
+  <div class="mb-3">
+    <label>Message</label>
+    <textarea class="form-control" rows="6" name="message" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Send</button>
+</form>
+{% endblock %}
