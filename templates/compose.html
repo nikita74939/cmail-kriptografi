@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Compose - C-Mail{% endblock %}
 {% block content %}
-<h3>✉️ Create New Message</h3>
-<form method="post" action="/compose">
+<h3>Create New Message</h3>
+<form method="post" action="/compose" enctype="multipart/form-data">
   <div class="mb-3">
     <label>To</label>
     <input type="text" class="form-control" name="to" required>
@@ -15,6 +15,10 @@
     <label>Message</label>
     <textarea class="form-control" rows="6" name="message" required></textarea>
   </div>
-  <button type="submit" class="btn btn-success">Send</button>
+  <div class="mb-3">
+    <label>Attach File / Image</label>
+    <input type="file" class="form-control" name="file">
+  </div>
+  <button type="submit" class="btn btn-success">Encrypt & Send</button>
 </form>
 {% endblock %}
