@@ -1,5 +1,5 @@
-from Crypto.Cipher import DES3
-from Crypto.Random import get_random_bytes
+from Crypto.Cipher import DES3 # type: ignore
+from Crypto.Random import get_random_bytes # type: ignore
 import hashlib
 import base64
 
