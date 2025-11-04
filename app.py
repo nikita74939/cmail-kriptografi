@@ -103,6 +103,49 @@ def dashboard():
         return redirect(url_for('login'))
     return render_template('dashboard.html', username=session['username'])
 
+@app.route('/inbox')
+def inbox():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('inbox.html', username=session['username'])
+
+@app.route('/sent')
+def sent():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('sent.html', username=session['username'])
+
+@app.route('/draft')
+def draft():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('draft.html', username=session['username'])
+
+@app.route('/starred')
+def starred():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('starred.html', username=session['username'])
+
+@app.route('/deleted')
+def deleted():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('deleted.html', username=session['username'])
+
+@app.route('/compose')
+def compose():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('compose.html', username=session['username'])
+
+@app.route('/profile')
+def profile():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('profile.html', username=session['username'])
+
+
 # ====== Logout ======
 @app.route('/logout')
 def logout():
