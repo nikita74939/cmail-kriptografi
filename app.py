@@ -57,7 +57,7 @@ def register():
         email = request.form['email']
         password = request.form['password']
 
-        password_hash = argon2.hash_password(password)
+        password_hash = argon2.hash(password)
 
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
