@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import sqlite3
 from passlib.hash import argon2
 import os
+from crypto.argon2i import hash_password, verify_password
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
@@ -56,7 +57,7 @@ def register():
         email = request.form['email']
         password = request.form['password']
 
-        password_hash = argon2.hash(password)
+        password_hash = argon2.hash_password(password)
 
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
